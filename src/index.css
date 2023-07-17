@@ -32,3 +32,7 @@
 .date-field{
   @apply border border-secondary px-2 rounded 
 }
+
+.selected{
+  @apply bg-primary text-white
+}

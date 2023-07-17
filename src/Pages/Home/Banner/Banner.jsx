@@ -5,9 +5,11 @@ import animation from "../../../../public/animation_lk7b25ru.json";
 import Lottie from "lottie-react";
 import axios from 'axios';
 import ListedHouse from '../ListedHouse/ListedHouse';
+import { useLoaderData } from 'react-router-dom';
 const Banner = () => {
     const [searchText , setSearchText] = useState("");
     const [houses, setHouses] = useState([]);
+    console.log(houses);
     const [loading, setLoading] = useState(true);
     const [filters, setFilters] = useState({
       city: '',
@@ -19,14 +21,20 @@ const Banner = () => {
       maxRent: '',
     });
 
+    const [currentPage, setCurrentPage] = useState(0);
+    const { totalHouse } = useLoaderData();
+    const itemPerPage = 10;
+    const totalPage = Math.ceil(totalHouse / itemPerPage);
+    const pageNumbers = [...Array(totalPage).keys()]
+
     useEffect(() => {
         fetchHouses();
-      }, [filters]);
+      }, [filters,currentPage,itemPerPage]);
     
       const fetchHouses = async () => {
         try {
           setLoading(true);
-          const response = await axios.get('http://localhost:5000/houses', { params: filters });
+          const response = await axios.get(`http://localhost:5000/houses?page=${currentPage}&limit=${itemPerPage}`, { params: filters });
           setHouses(response.data);
           setLoading(false);
         } catch (error) {
@@ -157,6 +165,12 @@ const Banner = () => {
           ></ListedHouse>)
         )
       }
+
+<div className='my-10 text-center'>
+                    {
+                        pageNumbers.map(pageNumber => <button key={pageNumber} className={`border py-1 px-3 mr-2 rounded-md hover:bg-primary hover:text-white font-semibold my-5 ${currentPage === pageNumber ? 'selected' : " "}`} onClick={() => setCurrentPage(pageNumber)}>{pageNumber}</button>)
+                    }
+                </div>
 
 </div>
 </div>
