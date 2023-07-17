@@ -21,6 +21,7 @@ const Banner = () => {
       maxRent: '',
     });
 
+    // Pagination States
     const [currentPage, setCurrentPage] = useState(0);
     const { totalHouse } = useLoaderData();
     const itemPerPage = 10;
@@ -83,7 +84,7 @@ const Banner = () => {
 </div>
 
 <div className='my-20 w-full flex flex-col items-center justify-center mx-auto'>
-
+{/* Filter option */}
 <div className='w-full'>
         <h2 className='text-center mb-10 text-2xl font-bold text-primary'>Refine Your Search: Find Your Perfect Rental</h2>
 
@@ -153,10 +154,13 @@ const Banner = () => {
 
       </div>
 
+{/* Loading State */}
       {loading && <div className='flex items-center justify-center'>
 <Lottie animationData={animation} loop={true} />
       </div>}
 
+{/* Show Data on UI */}
+      <div className='grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-12 my-14'>
       {
         !loading && (
           houses.map((house)=><ListedHouse
@@ -165,7 +169,9 @@ const Banner = () => {
           ></ListedHouse>)
         )
       }
+      </div>
 
+{/* pagination */}
 <div className='my-10 text-center'>
                     {
                         pageNumbers.map(pageNumber => <button key={pageNumber} className={`border py-1 px-3 mr-2 rounded-md hover:bg-primary hover:text-white font-semibold my-5 ${currentPage === pageNumber ? 'selected' : " "}`} onClick={() => setCurrentPage(pageNumber)}>{pageNumber}</button>)
