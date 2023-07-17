@@ -22,3 +22,7 @@
 .my-btn{
   @apply bg-transparent border px-5 py-1 border-primary rounded-md text-primary font-medium hover:bg-primary hover:text-white transition-all duration-200
 }
+
+.search-field{
+  @apply w-96 px-14 py-2 rounded-md bg-warning bg-opacity-50 text-white focus:outline-warning focus:border-none border-none outline-none placeholder:text-white
+}
