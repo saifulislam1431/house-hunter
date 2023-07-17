@@ -11,3 +11,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.activeNav {
+  @apply bg-transparent font-medium text-primary hover:bg-transparent hover:text-primary text-base
+}
+.defaultNav{
+@apply bg-transparent hover:bg-transparent focus:bg-transparent focus:text-primary text-base
+}
+
+.my-btn{
+  @apply bg-transparent border px-5 py-1 border-primary rounded-md text-primary font-medium hover:bg-primary hover:text-white transition-all duration-200
+}
