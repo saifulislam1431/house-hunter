@@ -26,3 +26,9 @@
 .search-field{
   @apply w-96 px-14 py-2 rounded-md bg-warning bg-opacity-50 text-white focus:outline-warning focus:border-none border-none outline-none placeholder:text-white
 }
+.drop-field{
+  @apply w-32 border border-secondary px-3 rounded 
+}
+.date-field{
+  @apply border border-secondary px-2 rounded 
+}
