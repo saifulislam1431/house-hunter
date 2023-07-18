@@ -8,11 +8,11 @@ const Navbar = () => {
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>
 
-    <li><NavLink to="/propertyListings" className={({isActive})=>(isActive ? "active" : "defaultNav")}>Property Listings</NavLink></li>
+    <li><NavLink to="/propertyListings" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Property Listings</NavLink></li>
 
-    <li><NavLink to="/dashboard" className={({isActive})=>(isActive ? "active" : "defaultNav")}>Dashboard</NavLink></li>
+    <li><NavLink to="/dashboard" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Dashboard</NavLink></li>
 
-    <li><NavLink to="/about" className={({isActive})=>(isActive ? "active" : "defaultNav")}>About Us</NavLink></li>
+    <li><NavLink to="/about" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>About Us</NavLink></li>
     </>
     return (
         <div className="navbar nav-bg">
