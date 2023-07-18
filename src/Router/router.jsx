@@ -12,6 +12,8 @@ import Dashboard from '../Pages/Dashboard/Dashboard';
 import AllHouses from '../Pages/OwnerDashborad/AllHouses/AllHouses';
 import AddHouse from '../Pages/OwnerDashborad/AddHouse/AddHouse';
 import ManageHouses from '../Pages/OwnerDashborad/ManageHouses/ManageHouses';
+import ManageBookings from '../Pages/RenterDashboard/ManageBookings/ManageBookings';
+import CurrentBookings from '../Pages/RenterDashboard/CurrentBookings/CurrentBookings';
 
 
 
@@ -61,6 +63,14 @@ const router = createBrowserRouter([
             {
                 path:"manageHouses",
                 element:<ManageHouses></ManageHouses>
+            },
+            {
+path:"manageBookings",
+element:<ManageBookings />
+            },
+            {
+                path:"currentBookings",
+                element:<CurrentBookings />
             }
         ]
     }

@@ -43,7 +43,7 @@ const SignIn = () => {
     navigate("/dashboard/allHouses")
               }
               if(response.data.role === "House Renter"){
-                navigate("/renterDashboard")
+                navigate("/dashboard/manageBookings")
               }
               }
           } catch (error) {

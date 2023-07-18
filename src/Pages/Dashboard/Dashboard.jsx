@@ -83,7 +83,14 @@ const Dashboard = () => {
 
         <li><NavLink to="/dashboard/manageHouses" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Manage Houses</NavLink></li>
         </> 
-        : <></>
+        
+        : 
+        
+        <>
+        <li><NavLink to="/dashboard/manageBookings" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Manage Bookings</NavLink></li>
+
+        <li><NavLink to="/dashboard/currentBookings" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Current Bookings</NavLink></li>
+        </> 
       }
               <div className="divider"></div>
 
