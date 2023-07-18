@@ -32,6 +32,7 @@ const SignIn = () => {
             if(response.data){
                 const { token } = response.data;
               localStorage.setItem('token', token);
+              localStorage.setItem('role',response.data.role)
               Swal.fire({
                 title: 'Success!',
                 text: 'Sign Up Successful',

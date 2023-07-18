@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const token = localStorage.getItem("token")
+  const role = localStorage.getItem("role");
   const handleOut = ()=>{
     Swal.fire({
       title: 'Success!',
@@ -15,13 +16,14 @@ const Navbar = () => {
       confirmButtonText: 'Cool'
     })
     localStorage.removeItem("token")
+    localStorage.removeItem("role")
   }
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>
 
     <li><NavLink to="/propertyListings" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Property Listings</NavLink></li>
 
-    <li><NavLink to="/dashboard" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Dashboard</NavLink></li>
+    <li><NavLink to={role && role === "House Owner" ? "/dashboard/allHouses" : "/dashboard/manageBookings"} className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Dashboard</NavLink></li>
 
     <li><NavLink to="/about" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>About Us</NavLink></li>
     </>
