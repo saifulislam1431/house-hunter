@@ -8,6 +8,8 @@ import Banner from '../Pages/Home/Banner/Banner';
 import About from '../Pages/About/About';
 import SignIn from '../Pages/SignIn/SignIn';
 import SignUp from '../Pages/SignUp/SignUp';
+import OwnerDashboard from '../Pages/OwnerDashborad/OwnerDashboard';
+import RenterDashboard from '../Pages/RenterDashboard/RenterDashboard';
 
 
 
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
             }
         ]
         
+    },
+    {
+        path:"/ownerDashboard",
+        element:<OwnerDashboard></OwnerDashboard>
+    },
+    {
+        path:"/renterDashboard",
+        element:<RenterDashboard></RenterDashboard>
     }
 ])
 

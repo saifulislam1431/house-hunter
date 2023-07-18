@@ -7,20 +7,20 @@ import Lottie from "lottie-react";
 import animation from "../../../public/78126-secure-login.json"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from '../../Components/SocialLogin';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const[type , setType] = useState("password");
     const [IsShow , setIsShow] = useState(false);
     const [error , setError] = useState("");
-    const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state?.from?.pathname || "/"
 
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
 
-    const onSubmit = (data) => {
+    const onSubmit = async(data) => {
 
         const password = data.password;
         const confirmPassword = data.confirmPassword;
@@ -40,6 +40,44 @@ const SignUp = () => {
         if(role === "null" || role === "Select Your Role"){
             return setError("Please select your role")
         }
+
+        console.log(data);
+        try{
+            const response = await axios.post('http://localhost:5000/user/sigUp', {
+            name:data.name,
+            role:data.role,
+            phone:data.phone,
+            email:data.email,
+            password:data.password,
+            photo:data.photo
+          });
+          if(response.data){
+            const { token } = response.data;
+          localStorage.setItem('token', token);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Sign Up Successful',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        })
+          setError("")
+          if(response.data.role === "House Owner"){
+navigate("/ownerDashboard")
+          }
+          if(response.data.role === "House Renter"){
+            navigate("/renterDashboard")
+          }
+          }
+        }catch (error) {
+            console.log(error.response.data);
+            Swal.fire({
+                title: 'Error!',
+                text:error.response.data.message,
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+          
+          }
 
     }
 
