@@ -6,6 +6,8 @@ import ErrorPage from '../Pages/Error/ErrorPage';
 import Home from '../Pages/Home/Home/Home';
 import Banner from '../Pages/Home/Banner/Banner';
 import About from '../Pages/About/About';
+import SignIn from '../Pages/SignIn/SignIn';
+import SignUp from '../Pages/SignUp/SignUp';
 
 
 
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
             {
                 path:"/propertyListings",
                 element:<Banner />
+            },
+            {
+                path:"/signIn",
+                element:<SignIn></SignIn>
+            },
+            {
+                path:"/signUp",
+                element:<SignUp></SignUp>
             }
         ]
         
