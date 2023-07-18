@@ -54,6 +54,8 @@ const SignUp = () => {
           if(response.data){
             const { token } = response.data;
           localStorage.setItem('token', token);
+          localStorage.setItem('role',response.data.role);
+              localStorage.setItem('email',response.data.email);
           Swal.fire({
             title: 'Success!',
             text: 'Sign Up Successful',

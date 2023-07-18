@@ -15,8 +15,9 @@ const Navbar = () => {
       icon: 'success',
       confirmButtonText: 'Cool'
     })
-    localStorage.removeItem("token")
-    localStorage.removeItem("role")
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    localStorage.removeItem("email");
   }
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>

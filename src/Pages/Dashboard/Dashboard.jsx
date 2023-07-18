@@ -35,6 +35,7 @@ const Dashboard = () => {
       const handleLogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem("role");
+        localStorage.removeItem("email");
         setUser(null);
       };
       
