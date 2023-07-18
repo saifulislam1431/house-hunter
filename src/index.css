@@ -47,3 +47,10 @@
 .inputField{
   @apply w-full lg:w-96 px-6 py-2 rounded-md bg-accent bg-opacity-20 focus:outline focus:outline-accent
 }
+.activeSide{
+  @apply bg-white rounded-sm font-semibold text-base text-primary focus:bg-white hover:bg-white hover:text-primary focus:text-primary mb-4
+}
+
+.defaultSide{
+  @apply bg-transparent rounded-sm font-semibold text-base focus:bg-white hover:bg-transparent hover:text-primary focus:text-primary mb-4
+}

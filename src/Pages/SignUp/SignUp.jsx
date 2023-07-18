@@ -62,7 +62,7 @@ const SignUp = () => {
         })
           setError("")
           if(response.data.role === "House Owner"){
-navigate("/ownerDashboard")
+navigate("/dashboard/allHouses")
           }
           if(response.data.role === "House Renter"){
             navigate("/renterDashboard")

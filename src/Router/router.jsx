@@ -8,9 +8,10 @@ import Banner from '../Pages/Home/Banner/Banner';
 import About from '../Pages/About/About';
 import SignIn from '../Pages/SignIn/SignIn';
 import SignUp from '../Pages/SignUp/SignUp';
-import OwnerDashboard from '../Pages/OwnerDashborad/OwnerDashboard';
-import RenterDashboard from '../Pages/RenterDashboard/RenterDashboard';
 import Dashboard from '../Pages/Dashboard/Dashboard';
+import AllHouses from '../Pages/OwnerDashborad/AllHouses/AllHouses';
+import AddHouse from '../Pages/OwnerDashborad/AddHouse/AddHouse';
+import ManageHouses from '../Pages/OwnerDashborad/ManageHouses/ManageHouses';
 
 
 
@@ -49,7 +50,18 @@ const router = createBrowserRouter([
         errorElement:<ErrorPage />,
         element:<Dashboard/>,
         children:[
-            
+            {
+                path:"allHouses",
+                element:<AllHouses></AllHouses>
+            },
+            {
+                path:"newHouses",
+                element:<AddHouse></AddHouse>
+            },
+            {
+                path:"manageHouses",
+                element:<ManageHouses></ManageHouses>
+            }
         ]
     }
 ])

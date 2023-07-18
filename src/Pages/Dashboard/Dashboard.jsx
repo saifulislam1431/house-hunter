@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import animation from "../../../public/404Error.json";
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
-import { HiArrowLeftOnRectangle, HiArrowSmallLeft, HiBars3BottomLeft } from 'react-icons/hi2'
+import { HiArrowLeftOnRectangle, HiArrowSmallLeft, HiBars3BottomLeft, HiHome, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2'
+import logo from "../../assets/logo/rent.png"
 
 const Dashboard = () => {
     const [user, setUser] = useState(null);
@@ -61,15 +62,35 @@ const Dashboard = () => {
         <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content flex flex-col items-center justify-center">
-    {/* Page content here */}
+    <Outlet></Outlet>
     <label htmlFor="my-drawer-2" className="my-btn drawer-button lg:hidden top-3 left-3 absolute"><HiBars3BottomLeft className='h-6 w-6'/></label>
   
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-      {/* Sidebar content here */}
-     
+    <ul className="menu py-4 pl-4 pr-0 w-64 h-full bg-base-200 text-base-content">
+      
+    <Link to="/" className='relative w-96 my-10'>
+<img src={logo} alt="Logo" />
+<span className='absolute -bottom-1 brand-title  text-secondary'>House Hunter</span>
+        </Link>
+
+      {
+        user.role === "House Owner" ? <>
+        <li><NavLink to="/dashboard/allHouses" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>All Houses</NavLink></li>
+
+        <li><NavLink to="/dashboard/newHouses" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Add New House</NavLink></li>
+
+        <li><NavLink to="/dashboard/manageHouses" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Manage Houses</NavLink></li>
+        </> 
+        : <></>
+      }
+              <div className="divider"></div>
+
+<div className='my-8 px-3 flex flex-col gap-4'>
+<Link to="/" className='inline-flex items-center gap-2 font-medium'><HiHome className='w-6 h-6 text-primary'/>Home</Link>
+<button className='inline-flex items-center gap-2 font-medium' onClick={handleLogout}><HiOutlineArrowRightOnRectangle className='w-6 h-6 text-primary'/>Sign Out</button>
+</div>
     </ul>
   
   </div>
