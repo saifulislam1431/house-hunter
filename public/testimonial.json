@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "name":"Jane Doe",
+        "testimonial" : "House Hunter made the process of finding my dream home incredibly easy. The platform's user-friendly interface allowed me to search for rental properties in my preferred location with specific criteria. The communication with the landlord was seamless, and I found my perfect home within days. Highly recommended!",
+        "rating":4.6
+    },
+    {
+        "id" : 2,
+        "name":" John Smith",
+        "testimonial" : "I had a fantastic experience using House Hunter. The platform provided a wide range of rental options, and the advanced search filters helped me narrow down my choices. The ability to schedule property viewings directly through the platform saved me a lot of time and effort. Thanks to House Hunter, I found a beautiful home that met all my requirements.",
+        "rating":4
+    },
+    {
+        "id" : 3,
+        "name":"Sarah Johnson",
+        "testimonial" : "House Hunter exceeded my expectations in finding a rental property. The hot deals section showcased amazing discounts, and I was able to secure a fantastic property at an unbeatable price. The platform's user-friendly design and helpful FAQ section guided me throughout the process. House Hunter made my house hunting experience smooth and stress-free!",
+        "rating":5
+    }
+]
