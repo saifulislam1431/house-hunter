@@ -52,6 +52,12 @@ const Banner = () => {
         }));
       };
 
+      const handleSearch = () =>{
+        fetch(`http://localhost:5000/houses-by-location/${searchText}`)
+        .then(res=>res.json())
+        .then(data=>setHouses(data))
+      }
+
     return (
         <section>
 <div>
@@ -77,7 +83,7 @@ const Banner = () => {
 <p className="mb-5 text-white font-semibold">Connecting House Owners and Renters for Effortless Rentals</p>
 
 <div className='inline-flex items-center relative'>
-<input type="text" placeholder='Search your dream home' className='search-field' onKeyUp={e=>setSearchText(e.target.value)}/>
+<input type="text" placeholder='Search your dream home by location' className='search-field' onChange={e=>setSearchText(e.target.value)} onKeyUp={handleSearch}/>
 <HiOutlineMagnifyingGlass className=' text-white w-5 h-5 absolute left-3'/>
 </div>
 </div>
