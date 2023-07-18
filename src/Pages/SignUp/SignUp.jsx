@@ -22,21 +22,25 @@ const SignUp = () => {
 
     const onSubmit = (data) => {
 
-        // const password = data.password;
-        // const confirmPassword = data.confirmPassword;
-        // if(password.length < 6){
-        //     setError("Password must be six characters in length")
-        // }
-        // if(password !== confirmPassword){
-        //     return setError("Password doesn't match")
-        // }
-        // if(!/(?=.*?[A-Z])/.test(password)){
-        //     return setError("At least one upper case include in your password")
-        // }
-        // if(!/(?=.*?[#?!@$%^&*-])/.test(password)){
-        //     return setError("At least one special character include in your password")
-        // }
-console.log(data);
+        const password = data.password;
+        const confirmPassword = data.confirmPassword;
+        const role = data.role;
+        if(password.length < 6){
+            setError("Password must be six characters in length")
+        }
+        if(password !== confirmPassword){
+            return setError("Password doesn't match")
+        }
+        if(!/(?=.*?[A-Z])/.test(password)){
+            return setError("At least one upper case include in your password")
+        }
+        if(!/(?=.*?[#?!@$%^&*-])/.test(password)){
+            return setError("At least one special character include in your password")
+        }
+        if(role === "null" || role === "Select Your Role"){
+            return setError("Please select your role")
+        }
+
     }
 
 
@@ -111,19 +115,21 @@ console.log(data);
 
 
         <input type='url' placeholder='Enter Your Photo Url'
-        {...register("photo", { required: true })} 
-        aria-invalid={errors.photo ? "true" : "false"} 
+        {...register("photo", { required: false })} 
         className='inputField'/>
-        {errors.photo?.type === 'required' && <p role="alert" className='text-error font-medium'>Photo is required</p>}
-        
-        {/* <div>
-        <input type="number" placeholder='Your Number' {...register("phone", { min: 5, max: 99 })} className='inputField'/>
-        </div> */}
 
-        <select {...register("gender")} className='inputField font-semibold'>
-        <option defaultValue="Role">Role</option>
-        <option value="female">House Owner</option>
-        <option value="male">House Renter</option>
+
+<input type='tel' placeholder='Enter Your Number'
+        {...register("phone", { required: true })} 
+        aria-invalid={errors.phone ? "true" : "false"} 
+        className='inputField'/>
+        {errors.phone?.type === 'required' && <p role="alert" className='text-error font-medium'>Phone is required</p>}
+        
+
+        <select {...register("role")} className='inputField font-semibold'>
+        <option defaultValue="null">Select Your Role</option>
+        <option value="House Owner">House Owner</option>
+        <option value="House Renter">House Renter</option>
       </select>
 
       <p className='my-3 font-semibold text-red-600'>{error}</p>
