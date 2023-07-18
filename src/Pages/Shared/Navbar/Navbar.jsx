@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { HiArrowLeftOnRectangle, HiOutlineBars3BottomLeft } from "react-icons/hi2";
+import { HiArrowLeftOnRectangle, HiArrowRightOnRectangle, HiOutlineBars3BottomLeft } from "react-icons/hi2";
 import logo from "../../../assets/logo/rent.png"
 import "./Nav.css"
 
 const Navbar = () => {
+  const token = localStorage.getItem("token")
+  const handleOut = ()=>{
+    localStorage.removeItem("token")
+  }
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>
 
@@ -38,9 +42,13 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
- <Link to="signIn">
+{
+  token ? 
+  <button className='my-btn-sec inline-flex items-center gap-1' onClick={handleOut}>Sign Out <HiArrowRightOnRectangle className='w-5 h-5'/></button>
+:  <Link to="signIn">
     <button className='my-btn inline-flex items-center gap-1'>Sign In <HiArrowLeftOnRectangle className='w-5 h-5'/></button>
  </Link>
+}
   </div>
 </div>
     );

@@ -7,6 +7,8 @@ import Lottie from "lottie-react";
 import animation from "../../../public/78126-secure-login.json"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from '../../Components/SocialLogin';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 const SignIn = () => {
     const [type, setType] = useState("password");
     const [IsShow, setIsShow] = useState(false);
@@ -21,8 +23,37 @@ const SignIn = () => {
     const handleHide = () => {
         setType("password")
     }
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async(data) => {
+        try {
+            const response = await axios.post('http://localhost:5000/user/login', {
+              email: data.email,
+              password: data.password
+            });
+            if(response.data){
+                const { token } = response.data;
+              localStorage.setItem('token', token);
+              Swal.fire({
+                title: 'Success!',
+                text: 'Sign Up Successful',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+             
+              if(response.data.role === "House Owner"){
+    navigate("/ownerDashboard")
+              }
+              if(response.data.role === "House Renter"){
+                navigate("/renterDashboard")
+              }
+              }
+          } catch (error) {
+            Swal.fire({
+                title: 'Error!',
+                text:error.response.data.message,
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+          }
     };
     return (
         <section className='flex items-center justify-center min-h-[calc(100vh-100px)]'>
