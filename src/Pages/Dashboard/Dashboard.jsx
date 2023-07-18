@@ -6,11 +6,10 @@ import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
 import { HiArrowLeftOnRectangle, HiArrowSmallLeft, HiBars3BottomLeft, HiHome, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2'
 import logo from "../../assets/logo/rent.png"
-
+import profile from "../../assets/houseImg/user.png"
 const Dashboard = () => {
     const [user, setUser] = useState(null);
     console.log(user);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -71,10 +70,17 @@ const Dashboard = () => {
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
     <ul className="menu py-4 pl-4 pr-0 w-64 h-full bg-base-200 text-base-content">
       
-    <Link to="/" className='relative w-96 my-10'>
+    <Link to="/" className='relative w-96 mt-3 mb-10'>
 <img src={logo} alt="Logo" />
 <span className='absolute -bottom-1 brand-title  text-secondary'>House Hunter</span>
         </Link>
+
+        <div className='mb-10 px-16 space-y-1'>
+<img src={user.photo?user.photo:profile} alt="" className='w-16 rounded-full'/>
+<h1 className='font-semibold'>{user.name}</h1>
+<p className='font-medium text-primary'>{user.role}</p>
+<p></p>
+        </div>
 
       {
         user.role === "House Owner" ? <>
@@ -95,7 +101,7 @@ const Dashboard = () => {
       }
               <div className="divider"></div>
 
-<div className='my-8 px-3 flex flex-col gap-4'>
+<div className='my-3 px-3 flex flex-col gap-4'>
 <Link to="/" className='inline-flex items-center gap-2 font-medium'><HiHome className='w-6 h-6 text-primary'/>Home</Link>
 <button className='inline-flex items-center gap-2 font-medium' onClick={handleLogout}><HiOutlineArrowRightOnRectangle className='w-6 h-6 text-primary'/>Sign Out</button>
 </div>
