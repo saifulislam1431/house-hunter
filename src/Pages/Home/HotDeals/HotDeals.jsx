@@ -12,15 +12,11 @@ const HotDeals = () => {
     useEffect(()=>{
         const endDate = new Date("2023-07-26").getTime();
 
-            // Update the countdown every second
     const countdownTimer = setInterval(() => {
-        // Get the current date and time
         const now = new Date().getTime();
   
-        // Calculate the time remaining
         const distance = endDate - now;
   
-        // Calculate days, hours, minutes, and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -32,13 +28,11 @@ const HotDeals = () => {
         setCountHours(hours);
         setCountDays(days)
   
-        // If the countdown is over, clear the timer
         if (distance < 0) {
           clearInterval(countdownTimer);
         }
       }, 1000);
   
-      // Cleanup the timer when the component unmounts
       return () => clearInterval(countdownTimer);
 
     },[])

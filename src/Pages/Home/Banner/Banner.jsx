@@ -9,7 +9,6 @@ import { useLoaderData } from 'react-router-dom';
 const Banner = () => {
     const [searchText , setSearchText] = useState("");
     const [houses, setHouses] = useState([]);
-    console.log(houses);
     const [loading, setLoading] = useState(true);
     const [filters, setFilters] = useState({
       city: '',
