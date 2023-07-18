@@ -178,7 +178,7 @@ const Banner = () => {
       </div>
 
 {/* pagination */}
-<div className='my-10 text-center'>
+<div className='mt-10 text-center'>
                     {
                         pageNumbers.map(pageNumber => <button key={pageNumber} className={`border py-1 px-3 mr-2 rounded-md hover:bg-primary hover:text-white font-semibold my-5 ${currentPage === pageNumber ? 'selected' : " "}`} onClick={() => setCurrentPage(pageNumber)}>{pageNumber}</button>)
                     }
