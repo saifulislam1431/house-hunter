@@ -10,6 +10,7 @@ import SignIn from '../Pages/SignIn/SignIn';
 import SignUp from '../Pages/SignUp/SignUp';
 import OwnerDashboard from '../Pages/OwnerDashborad/OwnerDashboard';
 import RenterDashboard from '../Pages/RenterDashboard/RenterDashboard';
+import Dashboard from '../Pages/Dashboard/Dashboard';
 
 
 
@@ -44,12 +45,12 @@ const router = createBrowserRouter([
         
     },
     {
-        path:"/ownerDashboard",
-        element:<OwnerDashboard></OwnerDashboard>
-    },
-    {
-        path:"/renterDashboard",
-        element:<RenterDashboard></RenterDashboard>
+        path:"/dashboard",
+        errorElement:<ErrorPage />,
+        element:<Dashboard/>,
+        children:[
+            
+        ]
     }
 ])
 

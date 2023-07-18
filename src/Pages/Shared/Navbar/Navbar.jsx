@@ -3,10 +3,17 @@ import { Link, NavLink } from 'react-router-dom';
 import { HiArrowLeftOnRectangle, HiArrowRightOnRectangle, HiOutlineBars3BottomLeft } from "react-icons/hi2";
 import logo from "../../../assets/logo/rent.png"
 import "./Nav.css"
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
   const token = localStorage.getItem("token")
   const handleOut = ()=>{
+    Swal.fire({
+      title: 'Success!',
+      text: 'Sign Out Successfully',
+      icon: 'success',
+      confirmButtonText: 'Cool'
+    })
     localStorage.removeItem("token")
   }
     const navItems = <>
