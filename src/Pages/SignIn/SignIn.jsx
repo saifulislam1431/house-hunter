@@ -25,7 +25,7 @@ const SignIn = () => {
     }
     const onSubmit = async(data) => {
         try {
-            const response = await axios.post('http://localhost:5000/user/login', {
+            const response = await axios.post('https://house-hunter-server-seven.vercel.app/user/login', {
               email: data.email,
               password: data.password
             });

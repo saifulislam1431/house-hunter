@@ -16,7 +16,7 @@ const AddHouse = () => {
             return setError('Please enter a valid Bangladeshi phone number.');
           } else {
             try{
-                const response = await axios.post('http://localhost:5000/new-house', data);
+                const response = await axios.post('https://house-hunter-server-seven.vercel.app/new-house', data);
               if(response.data.insertedId){
                 refetch();
                 setError("");

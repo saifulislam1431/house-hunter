@@ -42,7 +42,7 @@ const SignUp = () => {
         }
 
         try{
-            const response = await axios.post('http://localhost:5000/user/sigUp', {
+            const response = await axios.post('https://house-hunter-server-seven.vercel.app/user/sigUp', {
             name:data.name,
             role:data.role,
             phone:data.phone,

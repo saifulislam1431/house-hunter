@@ -21,7 +21,7 @@ const Dashboard = () => {
 
       const getUserDetails = async (token) => {
         try {
-          const response = await axios.get('http://localhost:5000/user', {
+          const response = await axios.get('https://house-hunter-server-seven.vercel.app/user', {
             headers: {
               Authorization: `Bearer ${token}`
             }

@@ -8,7 +8,7 @@ const useOwnerHouse = () => {
     const{data: ownerHouses =[], refetch}=useQuery({
         queryKey:["houses-by" , email],
         queryFn: async()=>{
-            const res = await axios.get(`http://localhost:5000/houses-by?email=${email}`, {
+            const res = await axios.get(`https://house-hunter-server-seven.vercel.app/houses-by?email=${email}`, {
             headers: {
               Authorization: `Bearer ${token}`
             }

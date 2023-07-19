@@ -28,7 +28,7 @@ const UpdateHouses = () => {
           
           else {
             try{
-                const response = await axios.put(`http://localhost:5000/update-houses/${id}`, data);
+                const response = await axios.put(`https://house-hunter-server-seven.vercel.app/update-houses/${id}`, data);
               if(response.data.modifiedCount > 0){
                 navigate("/dashboard/manageHouses")
                 refetch();

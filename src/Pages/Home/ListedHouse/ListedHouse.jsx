@@ -56,7 +56,7 @@ const ListedHouse = ({house}) => {
           houseId:data._id
         }
         try {
-          const response = await axios.post('http://localhost:5000/bookings', bookingsData);
+          const response = await axios.post('https://house-hunter-server-seven.vercel.app/bookings', bookingsData);
           
           if(response.data.insertedId){
             refetch()

@@ -24,7 +24,7 @@ const selectItems = ownerHouses.find(selectItem=>selectItem._id === id)
 
 const handleDelete = async(id) =>{
   try{
-    const response = await axios.delete(`http://localhost:5000/delete-house/${id}`, {
+    const response = await axios.delete(`https://house-hunter-server-seven.vercel.app/delete-house/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

@@ -20,7 +20,7 @@ const ManageBookings = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then( async(result) => {
             if (result.isConfirmed) {
-                const res = await axios.delete(`http://localhost:5000/delete-bookings/${id}`, {
+                const res = await axios.delete(`https://house-hunter-server-seven.vercel.app/delete-bookings/${id}`, {
                     headers: {
                       Authorization: `Bearer ${token}`
                     }

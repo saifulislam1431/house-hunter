@@ -5,7 +5,8 @@ import animation from "../../../../public/animation_lk7b25ru.json";
 import Lottie from "lottie-react";
 import axios from 'axios';
 import ListedHouse from '../ListedHouse/ListedHouse';
-import { useLoaderData } from 'react-router-dom';
+import { data } from 'autoprefixer';
+
 const Banner = () => {
     const [searchText , setSearchText] = useState("");
     const [houses, setHouses] = useState([]);
@@ -19,10 +20,15 @@ const Banner = () => {
       minRent: '',
       maxRent: '',
     });
+const [totalHouse , setTotalHouse] = useState(0);
 
+useEffect(()=>{
+  fetch("https://house-hunter-server-seven.vercel.app/total-houses")
+  .then(res=>res.json())
+  .then(data=>setTotalHouse(data.totalHouse))
+},[])
     // Pagination States
     const [currentPage, setCurrentPage] = useState(0);
-    const { totalHouse } = useLoaderData();
     const itemPerPage = 10;
     const totalPage = Math.ceil(totalHouse / itemPerPage);
     const pageNumbers = [...Array(totalPage).keys()]
@@ -34,7 +40,7 @@ const Banner = () => {
       const fetchHouses = async () => {
         try {
           setLoading(true);
-          const response = await axios.get(`http://localhost:5000/houses?page=${currentPage}&limit=${itemPerPage}`, { params: filters });
+          const response = await axios.get(`https://house-hunter-server-seven.vercel.app/houses?page=${currentPage}&limit=${itemPerPage}`, { params: filters });
           setHouses(response.data);
           setLoading(false);
         } catch (error) {
@@ -52,7 +58,7 @@ const Banner = () => {
       };
 
       const handleSearch = () =>{
-        fetch(`http://localhost:5000/houses-by-location/${searchText}`)
+        fetch(`https://house-hunter-server-seven.vercel.app/houses-by-location/${searchText}`)
         .then(res=>res.json())
         .then(data=>setHouses(data))
       }
