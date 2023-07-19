@@ -34,6 +34,7 @@ const SignIn = () => {
               localStorage.setItem('token', token);
               localStorage.setItem('role',response.data.role);
               localStorage.setItem('email',response.data.email);
+              localStorage.setItem('user-name', response.data.name)
               Swal.fire({
                 title: 'Success!',
                 text: 'Sign Up Successful',
@@ -84,14 +85,14 @@ const SignIn = () => {
                             <input type='email' placeholder='Enter Your Email'
                                 {...register("email", { required: true })}
                                 aria-invalid={errors.email ? "true" : "false"}
-                                className='inputField' />
+                                className='inputField w-full lg:w-96' />
                             {errors.email?.type === 'required' && <p role="alert" className='text-error font-medium'>Email is required</p>}
 
                             <div className='inline-flex items-center'>
                                 <input type={type} placeholder='Enter Your Password'
                                     {...register("password", { required: "Password is required" })}
                                     aria-invalid={errors.password ? "true" : "false"}
-                                    className='inputField' />
+                                    className='inputField w-full lg:w-96' />
                                 <div className='relative right-8 cursor-pointer' onClick={() => setIsShow(!IsShow)}>
                                     {
                                         IsShow ? <FaEyeSlash className='h-5 w-5 text-primary' onClick={handleHide} /> : <FaEye className='h-5 w-5 text-primary' onClick={handleShow} />

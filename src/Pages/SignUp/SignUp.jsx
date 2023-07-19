@@ -55,6 +55,7 @@ const SignUp = () => {
           localStorage.setItem('token', token);
           localStorage.setItem('role',response.data.role);
               localStorage.setItem('email',response.data.email);
+              localStorage.setItem('user-name', response.data.name)
           Swal.fire({
             title: 'Success!',
             text: 'Sign Up Successful',
@@ -119,7 +120,7 @@ navigate("/dashboard/allHouses")
         <input type='text' placeholder='Enter Your Name'
         {...register("name", { required: true })} 
         aria-invalid={errors.name ? "true" : "false"} 
-        className='inputField'/>
+        className='inputField w-full lg:w-96'/>
         {errors.name?.type === 'required' && <p role="alert" className='text-error font-medium'>Name is required</p>}
 
 
@@ -127,14 +128,14 @@ navigate("/dashboard/allHouses")
         <input type='email' placeholder='Enter Your Email'
         {...register("email", { required: true })} 
         aria-invalid={errors.email ? "true" : "false"} 
-        className='inputField'/>
+        className='inputField w-full lg:w-96'/>
         {errors.email?.type === 'required' && <p role="alert" className='text-error font-medium'>Email is required</p>}
         
         <div className='inline-flex items-center'>
         <input type={type} placeholder='Enter Your Password'
         {...register("password", { required: "Password is required" })} 
         aria-invalid={errors.password ? "true" : "false"} 
-        className='inputField'/>
+        className='inputField w-full lg:w-96'/>
         <div className='relative right-8 cursor-pointer' onClick={() => setIsShow(!IsShow)}>
                                     {
                                         IsShow ? <FaEyeSlash className='h-5 w-5 text-primary' onClick={handleHide} /> : <FaEye className='h-5 w-5 text-primary' onClick={handleShow} />
@@ -147,7 +148,7 @@ navigate("/dashboard/allHouses")
         <input type="password" placeholder='Confirm Password'
         {...register("confirmPassword", { required: "Confirm Password is required" })} 
         aria-invalid={errors.confirmPassword ? "true" : "false"} 
-        className='inputField'/>
+        className='inputField w-full lg:w-96'/>
         </div>
         {errors.confirmPassword && <p role="alert" className='text-error font-medium'>{errors.confirmPassword?.message}</p>}
 
@@ -155,17 +156,17 @@ navigate("/dashboard/allHouses")
 
         <input type='url' placeholder='Enter Your Photo Url'
         {...register("photo", { required: false })} 
-        className='inputField'/>
+        className='inputField w-full lg:w-96'/>
 
 
 <input type='tel' placeholder='Enter Your Number'
         {...register("phone", { required: true })} 
         aria-invalid={errors.phone ? "true" : "false"} 
-        className='inputField'/>
+        className='inputField w-full lg:w-96'/>
         {errors.phone?.type === 'required' && <p role="alert" className='text-error font-medium'>Phone is required</p>}
         
 
-        <select {...register("role")} className='inputField font-semibold'>
+        <select {...register("role")} className='inputField font-semibold w-full lg:w-96'>
         <option defaultValue="null">Select Your Role</option>
         <option value="House Owner">House Owner</option>
         <option value="House Renter">House Renter</option>

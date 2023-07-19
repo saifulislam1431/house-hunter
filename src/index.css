@@ -25,10 +25,10 @@
 }
 
 .my-btn{
-  @apply bg-transparent border px-5 py-1 border-primary rounded-md text-primary font-medium hover:bg-primary hover:text-white transition-all duration-200
+  @apply bg-transparent border px-5 py-1 border-primary rounded-md text-primary font-medium hover:bg-primary hover:text-white transition-all duration-200 cursor-pointer
 }
 .my-btn-sec{
-  @apply bg-primary border px-3 py-1 border-primary rounded-md text-white font-medium hover:bg-transparent hover:text-primary transition-all duration-200
+  @apply bg-primary border px-3 py-1 border-primary rounded-md text-white font-medium hover:bg-transparent hover:text-primary transition-all duration-200 cursor-pointer
 }
 
 .search-field{
@@ -45,7 +45,7 @@
   @apply bg-primary text-white
 }
 .inputField{
-  @apply w-full px-6 py-2 rounded-md bg-accent bg-opacity-20 focus:outline focus:outline-accent
+  @apply w-full px-6 py-2 rounded-md bg-accent bg-opacity-20 focus:outline focus:outline-accent disabled:opacity-40 disabled:cursor-not-allowed
 }
 .activeSide{
   @apply bg-white rounded-tl-lg rounded-bl-lg font-semibold text-base text-primary focus:bg-white hover:bg-white hover:text-primary focus:text-primary mb-4 lg:w-64 w-60 

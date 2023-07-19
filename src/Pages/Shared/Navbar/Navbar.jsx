@@ -18,6 +18,7 @@ const Navbar = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
     localStorage.removeItem("email");
+    localStorage.removeItem('user-name')
   }
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>
