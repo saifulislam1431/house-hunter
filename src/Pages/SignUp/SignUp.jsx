@@ -41,7 +41,6 @@ const SignUp = () => {
             return setError("Please select your role")
         }
 
-        console.log(data);
         try{
             const response = await axios.post('http://localhost:5000/user/sigUp', {
             name:data.name,

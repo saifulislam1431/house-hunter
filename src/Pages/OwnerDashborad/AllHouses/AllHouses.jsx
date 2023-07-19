@@ -15,7 +15,7 @@ const AllHouses = () => {
 <div className='my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
     {
         ownerHouses.map(ownerHouse=>        <div key={ownerHouse._id} className="card bg-base-100 shadow-md w-72">
-        <figure><img src={ownerHouse.picture} alt="House" className='h-60 lg:h-full w-full'/></figure>
+        <figure><img src={ownerHouse.picture} alt="House" className='h-66 lg:h-full w-full'/></figure>
         <div className="card-body">
           <h2 className="card-title">{ownerHouse.name}</h2>
           <div className='flex flex-col items-start mt-3 mb-8'>

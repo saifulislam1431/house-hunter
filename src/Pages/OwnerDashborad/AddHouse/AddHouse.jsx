@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import useOwnerHouse from '../../../hooks/useOwnerHouse';
+import axios from 'axios';
 
 const AddHouse = () => {
+    const [,refetch] = useOwnerHouse()
     const [error , setError] = useState("");
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = async(data) => {
@@ -11,8 +15,29 @@ const AddHouse = () => {
         if (!regex.test(cleanedPhoneNumber)) {
             return setError('Please enter a valid Bangladeshi phone number.');
           } else {
-            console.log(data);
-            setError("")
+            try{
+                const response = await axios.post('http://localhost:5000/new-house', data);
+              if(response.data.insertedId){
+                refetch();
+                setError("");
+              Swal.fire({
+                title: 'Success!',
+                text: 'New House Added',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+               
+              }
+            }catch (error) {
+                console.log(error.response.data);
+                Swal.fire({
+                    title: 'Error!',
+                    text:error.response.data.message,
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+              
+              }
           }
 
     }
