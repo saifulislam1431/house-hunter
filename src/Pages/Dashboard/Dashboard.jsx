@@ -52,7 +52,7 @@ const Dashboard = () => {
             </div>
 
             <div className='my-10'>
-<h1 className='font-bold text-2xl text-error text-center'>Sorry for the discounting! If You want to see you dashboard please sign in or sign up first.</h1>
+<h1 className='font-bold text-2xl text-error text-center'>Sorry for the disconnecting! If You want to see you dashboard please sign in or sign up first.</h1>
             </div>
             </div>
 
