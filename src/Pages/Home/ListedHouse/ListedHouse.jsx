@@ -26,7 +26,7 @@ const ListedHouse = ({house}) => {
           confirmButtonText: 'Ok'
       })
       return navigate("/signIn")
-      }else if(!role === "House Renter"){
+      }else if(role === "House Owner"){
         Swal.fire({
           title: 'Error!',
           text: "You Can't Booking Because You Are House Owner.",
@@ -118,6 +118,9 @@ const ListedHouse = ({house}) => {
 
                         {
                           !token && !userEmail && <div className='text-red-600 font-medium mt-2'>You Can't Booking Any House Please Sing In First</div> 
+                        }
+                        {
+role === "House Owner" && <div className='text-red-600 font-medium mt-2'>You Can't Booking Because You Are House Owner.</div> 
                         }
 
 <div className='my-3'>

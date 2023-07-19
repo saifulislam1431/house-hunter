@@ -6,7 +6,7 @@ import "./Nav.css"
 import Swal from 'sweetalert2';
 
 const Navbar = () => {
-  const token = localStorage.getItem("token")
+  const [token , setToken] = useState(localStorage.getItem("token") ? localStorage.getItem("token") : null)
   const role = localStorage.getItem("role");
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "lightTheme")
 
@@ -36,6 +36,7 @@ useEffect(() => {
     localStorage.removeItem("role");
     localStorage.removeItem("email");
     localStorage.removeItem('user-name')
+    setToken(null)
   }
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>
