@@ -28,7 +28,7 @@
   @apply bg-transparent border px-5 py-1 border-primary rounded-md text-primary font-medium hover:bg-primary hover:text-white transition-all duration-200
 }
 .my-btn-sec{
-  @apply bg-primary border px-5 py-1 border-primary rounded-md text-white font-medium hover:bg-transparent hover:text-primary transition-all duration-200
+  @apply bg-primary border px-3 py-1 border-primary rounded-md text-white font-medium hover:bg-transparent hover:text-primary transition-all duration-200
 }
 
 .search-field{
