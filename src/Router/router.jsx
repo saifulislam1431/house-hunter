@@ -15,6 +15,7 @@ import ManageHouses from '../Pages/OwnerDashborad/ManageHouses/ManageHouses';
 import ManageBookings from '../Pages/RenterDashboard/ManageBookings/ManageBookings';
 import CurrentBookings from '../Pages/RenterDashboard/CurrentBookings/CurrentBookings';
 import UpdateHouses from '../Pages/OwnerDashborad/UpdateHouses/UpdateHouses';
+import Contact from '../Pages/Contact/Contact';
 
 
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path:"/signUp",
                 element:<SignUp></SignUp>
+            },
+            {
+path:"/contact",
+element:<Contact></Contact>
             }
         ]
         

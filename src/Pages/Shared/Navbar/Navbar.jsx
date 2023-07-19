@@ -46,6 +46,8 @@ useEffect(() => {
 
     <li><NavLink to="/about" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>About Us</NavLink></li>
 
+    <li><NavLink to="/contact" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Contact Us</NavLink></li>
+
 
     <label className="swap swap-rotate ml-2 shadow-md lg:px-4 py-2 lg:py-0 rounded-lg">
 
@@ -63,13 +65,13 @@ useEffect(() => {
 
     </>
     return (
-        <div className="navbar nav-bg">
-  <div className="navbar-start">
-    <div className="dropdown">
+        <div className="navbar nav-bg z-50 top-0 sticky">
+  <div className="navbar-start z-50">
+    <div className="dropdown z-50">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <HiOutlineBars3BottomLeft className='h-8 w-8 text-secondary'/>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
         {navItems}
       </ul>
     </div>
