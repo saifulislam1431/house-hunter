@@ -40,8 +40,6 @@ useEffect(() => {
     const navItems = <>
     <li><NavLink to="/" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Home</NavLink></li>
 
-    <li><NavLink to="/propertyListings" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Property Listings</NavLink></li>
-
     <li><NavLink to={role && role === "House Owner" ? "/dashboard/allHouses" : "/dashboard/currentBookings"} className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>Dashboard</NavLink></li>
 
     <li><NavLink to="/about" className={({isActive})=>(isActive ? "activeNav" : "defaultNav")}>About Us</NavLink></li>
