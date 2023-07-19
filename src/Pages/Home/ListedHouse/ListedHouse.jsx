@@ -5,7 +5,9 @@ import { IoMdResize } from "react-icons/io";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useBookings from '../../../hooks/useBookings';
 const ListedHouse = ({house}) => {
+  const [,refetch] = useBookings();
   const [userNumber , setUserNumber] = useState("")
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
@@ -57,6 +59,7 @@ const ListedHouse = ({house}) => {
           const response = await axios.post('http://localhost:5000/bookings', bookingsData);
           
           if(response.data.insertedId){
+            refetch()
             Swal.fire({
               title: 'Success!',
               text: 'Booking Successful',

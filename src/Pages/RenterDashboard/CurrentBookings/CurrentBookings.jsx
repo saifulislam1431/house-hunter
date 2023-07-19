@@ -11,7 +11,7 @@ const CurrentBookings = () => {
         <section className='flex items-center justify-center my-14'>
         <div>
         <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>Your Current Bookings</h2>
-        <div className='mt-12 grid grid-cols-1 items-center justify-center'>
+        <div className='mt-12 grid grid-cols-1 gap-12 items-center justify-center'>
        {
 bookings.map(booking=><div key={booking._id} className="card card-side bg-base-100 shadow-md ">
 <figure><img src={booking.picture} alt="House" className='h-60 lg:h-full w-full lg:w-[250px]'/></figure>
