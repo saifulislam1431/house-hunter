@@ -92,6 +92,7 @@ const Dashboard = () => {
         <li><NavLink to="/dashboard/newHouses" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Add New House</NavLink></li>
 
         <li><NavLink to="/dashboard/manageHouses" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Manage Houses</NavLink></li>
+        {/* <li><NavLink to="/dashboard/updateHouse" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Update House</NavLink></li> */}
         </> 
         
         : 

@@ -4,6 +4,7 @@ import { HiOutlineTrash, HiPencilSquare } from "react-icons/hi2";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 const ManageHouses = () => {
   const token = localStorage.getItem("token")
     const[ownerHouses,refetch]=useOwnerHouse();
@@ -88,7 +89,7 @@ const handleDelete = async(id) =>{
 
 
             <th className='flex'>
-            <label className="my-btn-sec cursor-pointer"><HiPencilSquare className='h-8 w-5'/></label>
+            <Link to={`/dashboard/updateHouse/${ownerHouse._id}`} className="my-btn-sec cursor-pointer"><HiPencilSquare className='h-8 w-5'/></Link>
 
               <button onClick={()=>handleDelete(ownerHouse._id)} className='bg-red-500 border px-3 py-1 border-red-500 rounded-md text-white font-medium hover:bg-transparent hover:text-red-500 transition-all duration-200 ml-2'><HiOutlineTrash className='h-8 w-5'/></button>
  

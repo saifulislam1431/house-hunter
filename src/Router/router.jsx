@@ -14,6 +14,7 @@ import AddHouse from '../Pages/OwnerDashborad/AddHouse/AddHouse';
 import ManageHouses from '../Pages/OwnerDashborad/ManageHouses/ManageHouses';
 import ManageBookings from '../Pages/RenterDashboard/ManageBookings/ManageBookings';
 import CurrentBookings from '../Pages/RenterDashboard/CurrentBookings/CurrentBookings';
+import UpdateHouses from '../Pages/OwnerDashborad/UpdateHouses/UpdateHouses';
 
 
 
@@ -71,6 +72,10 @@ element:<ManageBookings />
             {
                 path:"currentBookings",
                 element:<CurrentBookings />
+            },
+            {
+                path:"updateHouse/:id",
+                element:<UpdateHouses></UpdateHouses>
             }
         ]
     }
