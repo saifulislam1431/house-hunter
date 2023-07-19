@@ -7,7 +7,7 @@ export default {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        lightTheme: {
 
           "primary": "#05AF5D",
 
