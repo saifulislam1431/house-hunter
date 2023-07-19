@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import useOwnerHouse from '../../../hooks/useOwnerHouse';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const AddHouse = () => {
     const [,refetch] = useOwnerHouse()
@@ -43,6 +44,9 @@ const AddHouse = () => {
     }
     return (
         <section className='flex items-center justify-center my-12'>
+                <Helmet>
+                <title>House Hunter  | Add House</title>
+            </Helmet>
 <div>
 <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>Add New House</h2>
 <div className='my-8 w-full'>

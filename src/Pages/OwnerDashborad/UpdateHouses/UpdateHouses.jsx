@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useOwnerHouse from '../../../hooks/useOwnerHouse';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const UpdateHouses = () => {
     const [ownerHouses,refetch] = useOwnerHouse();
@@ -56,6 +57,9 @@ const UpdateHouses = () => {
     }
     return (
         <section className='flex items-center justify-center my-12'>
+            <Helmet>
+                <title>House Hunter  | Update House</title>
+            </Helmet>
             <div>
             <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>update House</h2>
 

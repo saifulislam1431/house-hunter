@@ -4,11 +4,15 @@ import { HiOutlineCurrencyBangladeshi, HiOutlineMapPin } from 'react-icons/hi2';
 import { FaBedPulse } from 'react-icons/fa6';
 import { FaBath } from 'react-icons/fa';
 import { IoMdResize } from 'react-icons/io';
+import { Helmet } from 'react-helmet';
 
 const AllHouses = () => {
     const [ownerHouses] = useOwnerHouse();
     return (
         <section className='flex items-center justify-center my-12'>
+            <Helmet>
+                <title>House Hunter  | All Houses</title>
+            </Helmet>
             <div>
             <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>Your All Houses</h2>
 <div className='my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>

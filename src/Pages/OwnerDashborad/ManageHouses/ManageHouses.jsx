@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 const ManageHouses = () => {
   const token = localStorage.getItem("token")
     const[ownerHouses,refetch]=useOwnerHouse();
@@ -51,6 +52,9 @@ const handleDelete = async(id) =>{
 
     return (
         <section className='my-12'>
+          <Helmet>
+                <title>House Hunter  | Manage Houses</title>
+            </Helmet>
 <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>Manage Your Houses</h2>
 
 <div className='my-8 w-full'>

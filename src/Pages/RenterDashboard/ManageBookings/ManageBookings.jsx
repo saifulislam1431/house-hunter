@@ -3,6 +3,7 @@ import useBookings from '../../../hooks/useBookings';
 import { HiOutlineTrash } from 'react-icons/hi2';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const ManageBookings = () => {
     const token = localStorage.getItem('token')
@@ -40,6 +41,9 @@ const ManageBookings = () => {
     }
     return (
         <section className='flex items-center justify-center'>
+          <Helmet>
+                <title>House Hunter  | Manage Bookings</title>
+            </Helmet>
 <div>
 <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>Manage Your Bookings</h2>
 <div className='mt-12'>

@@ -3,12 +3,16 @@ import useBookings from '../../../hooks/useBookings';
 import { FaBath, FaBedPulse, FaCalendarDays } from 'react-icons/fa6';
 import { IoMdResize } from 'react-icons/io';
 import { HiCheckBadge, HiOutlineCurrencyBangladeshi, HiOutlineMapPin } from 'react-icons/hi2';
+import { Helmet } from 'react-helmet';
 
 const CurrentBookings = () => {
     const [bookings] = useBookings();
 
     return (
         <section className='flex items-center justify-center my-14'>
+            <Helmet>
+                <title>House Hunter  | Current Bookings</title>
+            </Helmet>
         <div>
         <h2 className='text-center mb-10 text-2xl font-bold text-primary underline decoration-wavy'>Your Current Bookings</h2>
         <div className='mt-12 grid grid-cols-1 gap-12 items-center justify-center'>

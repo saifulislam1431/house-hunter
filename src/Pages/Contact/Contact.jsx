@@ -2,6 +2,7 @@ import React from 'react';
 import Lottie from "lottie-react";
 import animationData from "../../../public/contact.json"
 import { useForm } from 'react-hook-form';
+import { Helmet } from 'react-helmet';
 const Contact = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -11,6 +12,9 @@ const Contact = () => {
     }
     return (
         <section className='flex items-center justify-center my-14 min-h-[100px]'>
+            <Helmet>
+                <title>House Hunter  | Contact</title>
+            </Helmet>
 <div className='flex gap-20 items-center justify-center flex-col md:flex-row'>
 <div className='w-96'>
 <Lottie animationData={animationData} loop={true}></Lottie>
