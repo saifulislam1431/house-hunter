@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { HiArrowLeftOnRectangle, HiArrowSmallLeft, HiBars3BottomLeft, HiHome, HiOutlineArrowRightOnRectangle } from 'react-icons/hi2'
 import logo from "../../assets/logo/rent.png"
 import profile from "../../assets/houseImg/user.png"
+import animationData from "../../../public/animation_lk7b25ru.json";
 const Dashboard = () => {
     const [user, setUser] = useState(null);
     console.log(user);
@@ -39,13 +40,14 @@ const Dashboard = () => {
         localStorage.removeItem('user-name')
         setUser(null);
       };
+
       
       if (!user) {
         return(
             <section className='flex items-center justify-center min-h-[calc(100vh-150px)]'>
             <div className='mx-auto'>
             <div className='text-center mx-auto'>
-            <Lottie animationData={animation} loop={true} className='w-96 mx-auto'/>
+            <Lottie animationData={animationData} loop={true} className='w-96 mx-auto'/>
 
             <Link to="/signIn" className='my-btn inline-flex items-center gap-1'><HiArrowLeftOnRectangle className='h-6 w-6'/>Please Sign In First</Link>
             </div>
@@ -96,9 +98,8 @@ const Dashboard = () => {
         : 
         
         <>
-        <li><NavLink to="/dashboard/manageBookings" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Manage Bookings</NavLink></li>
-
         <li><NavLink to="/dashboard/currentBookings" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Current Bookings</NavLink></li>
+        <li><NavLink to="/dashboard/manageBookings" className={({isActive}) =>(isActive ? "activeSide" : "defaultSide")}>Manage Bookings</NavLink></li>
         </> 
       }
               <div className="divider"></div>

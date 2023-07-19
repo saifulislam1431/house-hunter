@@ -46,7 +46,7 @@ const SignIn = () => {
     navigate("/dashboard/allHouses")
               }
               if(response.data.role === "House Renter"){
-                navigate("/dashboard/manageBookings")
+                navigate("/dashboard/currentBookings")
               }
               }
           } catch (error) {
