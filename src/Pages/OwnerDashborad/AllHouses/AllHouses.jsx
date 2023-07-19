@@ -7,7 +7,6 @@ import { IoMdResize } from 'react-icons/io';
 
 const AllHouses = () => {
     const [ownerHouses] = useOwnerHouse();
-    console.log(ownerHouses);
     return (
         <section className='flex items-center justify-center my-12'>
             <div>
@@ -21,9 +20,10 @@ const AllHouses = () => {
           <div className='flex flex-col items-start mt-3 mb-8'>
               <div className='flex flex-col items-start gap-3'>
                   <p className='inline-flex items-center gap-2 text-base justify-center'><HiOutlineMapPin className='h-6 w-5 text-primary'/> {ownerHouse.city}</p>
+                  <p className='inline-flex items-center gap-2 text-base justify-center'>{ownerHouse.address}</p>
                   <p className='inline-flex items-center gap-2 text-base justify-center'><HiOutlineCurrencyBangladeshi className='h-6 w-5 text-primary'/> {ownerHouse.rent_per_month}/month</p>
               </div>
-              <p className='inline-flex items-center gap-2 text-base justify-center mt-2'>{ownerHouse.address}</p>
+              
           </div>
         </div>
       </div>)
