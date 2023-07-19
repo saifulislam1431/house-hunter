@@ -5,7 +5,6 @@ import React from 'react';
 const useOwnerHouse = () => {
     const email = localStorage.getItem("email")
     const token = localStorage.getItem("token")
-    console.log(email);
     const{data: ownerHouses =[], refetch}=useQuery({
         queryKey:["houses-by" , email],
         queryFn: async()=>{

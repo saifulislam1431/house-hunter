@@ -6,7 +6,7 @@ import { HiCheckBadge, HiOutlineCurrencyBangladeshi, HiOutlineMapPin } from 'rea
 
 const CurrentBookings = () => {
     const [bookings] = useBookings();
-    console.log(bookings);
+
     return (
         <section className='flex items-center justify-center my-14'>
         <div>

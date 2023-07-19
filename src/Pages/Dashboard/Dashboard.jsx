@@ -10,7 +10,6 @@ import profile from "../../assets/houseImg/user.png"
 import animationData from "../../../public/animation_lk7b25ru.json";
 const Dashboard = () => {
     const [user, setUser] = useState(null);
-    console.log(user);
 
     useEffect(() => {
         const token = localStorage.getItem('token');

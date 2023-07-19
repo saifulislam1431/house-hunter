@@ -53,7 +53,7 @@ const ListedHouse = ({house}) => {
           name:data.name,
           picture:data.picture,
           rent_per_month:data.rent_per_month,
-          _id:data._id
+          houseId:data._id
         }
         try {
           const response = await axios.post('http://localhost:5000/bookings', bookingsData);
